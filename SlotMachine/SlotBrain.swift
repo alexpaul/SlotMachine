@@ -85,6 +85,7 @@ class SlotBrain {
         return winnings
     }
     
+    // Check for a Flush
     class func checkFlush(slotRow: [Slot]) -> Bool{
         var redCount = 0, blackCount = 0
         var isFlush = false
