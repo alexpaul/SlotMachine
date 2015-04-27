@@ -13,6 +13,9 @@
 		5753800B1AE48E910006FAB8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5753800A1AE48E910006FAB8 /* Images.xcassets */; };
 		5753800E1AE48E910006FAB8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5753800C1AE48E910006FAB8 /* LaunchScreen.xib */; };
 		5753801A1AE48E910006FAB8 /* SlotMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575380191AE48E910006FAB8 /* SlotMachineTests.swift */; };
+		575380241AEA4BBD0006FAB8 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575380231AEA4BBD0006FAB8 /* Slot.swift */; };
+		575380261AEA51C60006FAB8 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575380251AEA51C60006FAB8 /* Factory.swift */; };
+		576175E71AED7F88008B34B2 /* SlotBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576175E61AED7F88008B34B2 /* SlotBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		575380131AE48E910006FAB8 /* SlotMachineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlotMachineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575380181AE48E910006FAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575380191AE48E910006FAB8 /* SlotMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineTests.swift; sourceTree = "<group>"; };
+		575380231AEA4BBD0006FAB8 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		575380251AEA51C60006FAB8 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		576175E61AED7F88008B34B2 /* SlotBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +83,11 @@
 		575380001AE48E910006FAB8 /* SlotMachine */ = {
 			isa = PBXGroup;
 			children = (
-				575380031AE48E910006FAB8 /* AppDelegate.swift */,
 				575380051AE48E910006FAB8 /* ViewController.swift */,
+				576175E61AED7F88008B34B2 /* SlotBrain.swift */,
+				575380251AEA51C60006FAB8 /* Factory.swift */,
+				575380231AEA4BBD0006FAB8 /* Slot.swift */,
 				575380071AE48E910006FAB8 /* Main.storyboard */,
-				5753800A1AE48E910006FAB8 /* Images.xcassets */,
-				5753800C1AE48E910006FAB8 /* LaunchScreen.xib */,
 				575380011AE48E910006FAB8 /* Supporting Files */,
 			);
 			path = SlotMachine;
@@ -90,6 +96,9 @@
 		575380011AE48E910006FAB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5753800C1AE48E910006FAB8 /* LaunchScreen.xib */,
+				5753800A1AE48E910006FAB8 /* Images.xcassets */,
+				575380031AE48E910006FAB8 /* AppDelegate.swift */,
 				575380021AE48E910006FAB8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575380261AEA51C60006FAB8 /* Factory.swift in Sources */,
 				575380061AE48E910006FAB8 /* ViewController.swift in Sources */,
+				575380241AEA4BBD0006FAB8 /* Slot.swift in Sources */,
 				575380041AE48E910006FAB8 /* AppDelegate.swift in Sources */,
+				576175E71AED7F88008B34B2 /* SlotBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +419,7 @@
 				5753801F1AE48E910006FAB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		575380201AE48E910006FAB8 /* Build configuration list for PBXNativeTarget "SlotMachineTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				575380221AE48E910006FAB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
