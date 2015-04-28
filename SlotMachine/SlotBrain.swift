@@ -55,31 +55,37 @@ class SlotBrain {
                 winnings++
                 flushWithCount++
             }
-            if flushWithCount == 3{
-                println("Royal Flush")
-                winnings += 15
-            }
             
             // 2. threeOfAKind
             if checkThreeOfAKind(slotRow) == true{
                 println("Row \(index + 1) has three of a kind")
-                winnings += 10
+                winnings += 3
                 threeOfAKindWinCount++
+            }
+            
+            // 3. straight
+            let (isStraight, ascending, descending) = checkStraight(slotRow)
+            if isStraight{
+                if ascending{
+                    println("Row \(index + 1) is straight ascending")
+                }else{
+                    println("Row \(index + 1) is straight descending")
+                }
+                winnings++
+                straightWinCount++
+            }
+            
+            if flushWithCount == 3{
+                println("Royal Flush")
+                winnings += 15
             }
             if threeOfAKindWinCount == 3{
                 println("Jackpot - 3 of a KIND")
                 winnings += 50
             }
-            
-            // 3. straight
-            if checkStraight(slotRow){
-                println("Row \(index + 1) is straight")
-                winnings++
-                straightWinCount++
-            }
             if straightWinCount == 3{
                 println("Pretty Awesome = Straight")
-                winnings += 25
+                winnings += 1000
             }
         }
         return winnings
@@ -113,18 +119,25 @@ class SlotBrain {
         return isThreeOfAKind
     }
     
-    class func checkStraight(slotRow: [Slot]) -> Bool{
+    class func checkStraight(slotRow: [Slot]) -> (Bool, Bool, Bool){
         var isStraight = true
         var previousValue = 0
+        var ascending = true
+        var descending = true
         for (index, slot) in enumerate(slotRow){
             if previousValue != 0{
-                if slot.value - previousValue != 1 {
-                    return false
+                if slot.value - previousValue != 1{
+                    ascending = false
+                }
+                if slot.value - previousValue != -1{
+                    descending = false
                 }
             }
             previousValue = slot.value
         }
-        return isStraight
+        if descending == false && ascending == false {isStraight = false}
+        
+        return (isStraight, ascending, descending)
     }
     
 }
